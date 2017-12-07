@@ -1,0 +1,48 @@
+mydb{
+
+    .table{
+      margin:0 auto;
+      th{
+        text-transform:capitalize;
+        text-align:left;
+      }
+      td{
+        .string{
+
+        }
+        .number,.money{
+          text-align:right;
+        }
+        .object{
+          .btn-group{
+            button{
+              background:inherit;
+            }
+          }
+
+          .btn-group.inner-content:hover > .dropdown-menu{
+            display:block;
+            -webkit-transition: display 1s;
+            -moz-transition: display 1s;
+            -ms-transition: display 1s;
+            -o-transition: display 1s;
+            transition: display 1s;
+          }
+
+          .dropdown-menu{
+            li{
+              padding:1em;
+
+            }
+
+          }
+        }
+
+        .date{
+
+        }
+      }
+    }
+
+}
+

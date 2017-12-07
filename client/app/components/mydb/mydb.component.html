@@ -1,0 +1,54 @@
+<table class="table table-responsive table-stripped" ng-table="vm.TableParams"  template-header="sample_ng_header" show-filter="true">
+        <tbody>
+        <tr ng-repeat="Object in $data">
+            <td ng-repeat="(key,item) in Object" ng-init="type=vm.WhatIsType(item);" sortable="'{{key}}'">
+                <div ng-if="type!='object'" ng-class="type">
+                    <div class="inner-content" ng-if="type==='money'">{{item | currency }}</div>
+                    <div class="inner-content" ng-if="type==='number'">{{item }}</div>
+                    <div class="inner-content" ng-if="type==='date'"> {{item  | DateToNow}}</div>
+                    <div class="inner-content" ng-if="type=='string'" ng-bind-html="item | UrlTransform"> </div>
+                </div>
+                <div ng-if="type=='object'" class="object">
+                    <div class="btn-group inner-content btn-full">
+                        <button type="button" class="btn btn-clear">Object DropDown</button>
+                        <button type="button" class="btn btn-clear dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="(keys,val) in item"  ng-init="type=vm.WhatIsType(val);">
+                               <span ng-if="type=='date'">{{val | DateToNow}}</span>
+                                <span ng-if="type!=='date'">{{val}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+
+<script id="sample_ng_header" type="text/ng-template">
+
+<tr>
+    <th ng-repeat="(key,item) in $data[0]"
+        class="text-center sortable" ng-class="{
+              'sort-asc': vm.TableParams.isSortBy(key, 'asc'),
+              'sort-desc': vm.TableParams.isSortBy(key, 'desc')
+            }"
+        ng-click="vm.TableParams.sorting(key, TableParams.isSortBy(key, 'asc') ? 'desc' : 'asc')">
+        <div ng-if="!template" class="ng-table-header" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'div'}">
+            {{key | rmUnderScore}}
+            <span ng-bind="$column.title(this)" ng-class="{'sort-indicator': params.settings().sortingIndicator == 'span'}"></span>
+        </div>
+    </th>
+</tr>
+</script>
+
+
+
+
+
+

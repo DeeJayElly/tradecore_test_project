@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:700');
+@import url('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.css');
+
+body {
+  font-family: 'Open Sans';
+  background-color: #f8f8f8 !important;
+  height: 100vh;
+  width: 100%;
+
+
+  .container.navHolder {
+    background: #337AB7;
+    .navbar {
+      .navbar-brand {
+        color: white;
+        font-size: 3em;
+        font-family: 'Open Sans Bold';
+        margin-top: 5px;
+      }
+      .navbar-collapse {
+        float: right;
+        ul {
+          list-style-type: none;
+          li {
+            padding: 25px 18px 5px 18px;
+            a {
+              font-size: 1.3em;
+              font-family: "Open Sans";
+              color: white;
+              text-transform: capitalize;
+
+            }
+
+          }
+        }
+      }
+    }
+    margin-bottom:2%;
+  }
+
+ .body.container{
+   -webkit-border-radius:3px;
+   -moz-border-radius:3px;
+   border-radius:3px;
+   overflow-y:scroll;
+   overflow-x:hidden;
+  background:white;
+    height:85vh;
+  }
+}
+a:hover{
+  text-decoration: none;
+
+}
+a:active{
+  text-decoration: none;
+
+}
+a:visited {
+  text-decoration: none;
+}
